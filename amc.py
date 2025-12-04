@@ -4,7 +4,7 @@ import pytest
 from datetime import datetime
 from dotenv import load_dotenv
 
-from discord_notify import send_showtimes
+from discord_notify import send_showtimes, send_message
 
 load_dotenv()
 
@@ -68,6 +68,7 @@ def test_scrape_films(sb) -> None:
         send_showtimes(theater_name, results)
         print(f"✅ Sent {len(results)} movies to Discord")
     else:
+        send_message("⚠️ No showtimes found - the scraper may need updating")
         print("⚠️ No showtimes found")
 
 

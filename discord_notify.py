@@ -4,6 +4,13 @@ from typing import Optional
 from datetime import datetime
 
 
+def send_message(content: str, webhook_url: Optional[str] = None) -> None:
+    webhook_url = webhook_url or os.getenv("DISCORD_WEBHOOK_URL")
+    if not webhook_url:
+        raise ValueError("DISCORD_WEBHOOK_URL not set")
+    _send_message(webhook_url, content)
+
+
 def send_showtimes(
     theater_name: str,
     movies: list[dict],
