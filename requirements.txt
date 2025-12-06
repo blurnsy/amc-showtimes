@@ -1,4 +1,9 @@
 seleniumbase
 python-dotenv
 requests
+discord.py
+
+
+
+
 
