@@ -14,9 +14,9 @@ def random_delay(min_ms: int = 200, max_ms: int = 800) -> None:
 
 def human_type(sb, selector: str, text: str) -> None:
     sb.click(selector)
-    random_delay(100, 300)
-    sb.slow_type(selector, text, timeout=10)
-    random_delay(200, 500)
+    random_delay(300, 600)
+    sb.type(selector, text)
+    random_delay(400, 800)
 
 
 def human_click(sb, selector: str) -> None:
