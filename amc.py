@@ -73,4 +73,4 @@ def test_scrape_films(sb) -> None:
 
 
 if __name__ == "__main__":
-    pytest.main(["-s", "--uc", __file__])
+    pytest.main(["-s", "--headed", __file__])

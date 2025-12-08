@@ -39,4 +39,4 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          pytest amc.py -s --xvfb --uc
+          pytest amc.py -s --xvfb --headed
