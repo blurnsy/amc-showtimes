@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Random delay for scheduled runs
+        if: github.event_name == 'schedule'
+        run: sleep $((RANDOM % 300))
+      
       - uses: actions/checkout@v4
       
       - name: Set up Python
