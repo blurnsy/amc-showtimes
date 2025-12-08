@@ -1,3 +1,4 @@
+import os
 import random
 import time
 import pytest
@@ -20,6 +21,14 @@ def random_scroll(sb) -> None:
 
 
 def test_scrape_films(sb) -> None:
+    if os.getenv("GITHUB_ACTIONS"):
+        startup_delay = random.randint(10, 45)
+        print(f"⏳ Scheduled run detected - waiting {startup_delay}s to randomize timing...")
+        time.sleep(startup_delay)
+    
+    sb.open("https://www.google.com")
+    random_delay(2000, 4000)
+    
     url = "https://www.amctheatres.com/movie-theatres/dallas-ft-worth/amc-northpark-15/showtimes"
     sb.open(url)
     random_delay(1000, 2000)

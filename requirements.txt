@@ -1,4 +1,5 @@
 seleniumbase
+pytest-rerunfailures
 python-dotenv
 requests
 discord.py
