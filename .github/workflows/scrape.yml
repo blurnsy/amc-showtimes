@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Random delay for scheduled runs
+        if: github.event_name == 'schedule'
+        run: sleep $((RANDOM % 300))
+      
       - uses: actions/checkout@v4
       
       - name: Set up Python
@@ -35,4 +39,4 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          pytest amc.py -s --xvfb --headed
+          pytest amc.py -s --xvfb --uc
