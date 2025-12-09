@@ -2,8 +2,8 @@ name: AMC Showtimes
 
 on:
   schedule:
-    # Every 60 minutes (for testing)
-    - cron: '0 * * * *'
+    # Daily at 6:20 AM CST (12:20 UTC)
+    - cron: '20 12 * * *'
   
   workflow_dispatch:
   
